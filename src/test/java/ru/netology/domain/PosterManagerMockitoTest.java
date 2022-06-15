@@ -11,7 +11,7 @@ import static org.mockito.Mockito.verify;
 public class PosterManagerMockitoTest {
 
     private PosterRepository repository = Mockito.mock(PosterRepository.class);
-    private PosterManager manager = new PosterManager (4, repository);
+    private PosterManager manager = new PosterManager(4, repository);
     private WatchMovie first = new WatchMovie(145, "http://1", "Аллея кошмаров", "20 января 2022", "Драма");
     private WatchMovie second = new WatchMovie(15, "http://2", "Анчартед: На картах не значится", "8 февраля 2022", "Приключения");
     private WatchMovie third = new WatchMovie(367, "http://3", "Смерть на Ниле", "10 февраля 2022", "Детектив");
@@ -20,12 +20,12 @@ public class PosterManagerMockitoTest {
 
     @Test
     public void findLastTest() {
-        WatchMovie[] returned = new WatchMovie[] {first, second, third, fourth, fifth};
+        WatchMovie[] returned = new WatchMovie[]{first, second, third, fourth, fifth};
         doReturn(returned).when(repository).findAll();
 
 
         WatchMovie[] actual = manager.findLast();
-        WatchMovie[] expected = { fifth, fourth, third, second };
+        WatchMovie[] expected = {fifth, fourth, third, second};
         Assertions.assertArrayEquals(actual, expected);
         verify(repository).findAll();
     }

@@ -31,7 +31,7 @@ public class PosterManagerTest {
         manager.add(sixth);
         manager.add(seventh);
         WatchMovie[] actual = manager.findAll();
-        WatchMovie[] expected = { first, second, third, fourth, fifth, sixth, seventh };
+        WatchMovie[] expected = {first, second, third, fourth, fifth, sixth, seventh};
 
         Assertions.assertArrayEquals(actual, expected);
 
@@ -39,7 +39,7 @@ public class PosterManagerTest {
 
 
     @Test
-    public  void  findLastTest(){
+    public void findLastTest() {
         PosterManager manager = new PosterManager(5, (repo));
         manager.add(first);
         manager.add(second);
@@ -49,13 +49,14 @@ public class PosterManagerTest {
         manager.add(sixth);
         manager.add(seventh);
         WatchMovie[] actual = manager.findLast();
-        WatchMovie[] expected = { seventh, sixth, fifth, fourth, third };
+        WatchMovie[] expected = {seventh, sixth, fifth, fourth, third};
 
         Assertions.assertArrayEquals(actual, expected);
 
     }
+
     @Test
-    public  void  findLastMaxTest(){
+    public void findLastMaxTest() {
         PosterManager manager = new PosterManager(repo);
         manager.add(first);
         manager.add(second);
@@ -69,13 +70,13 @@ public class PosterManagerTest {
         manager.add(tenth);
         manager.add(eleventh);
         WatchMovie[] actual = manager.findLast();
-        WatchMovie[] expected = { eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second };
+        WatchMovie[] expected = {eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
 
         Assertions.assertArrayEquals(actual, expected);
     }
 
     @Test
-    public  void  findLastIncompleteTest(){
+    public void findLastIncompleteTest() {
         PosterManager manager = new PosterManager(repo);
         manager.add(first);
         manager.add(second);
@@ -83,13 +84,13 @@ public class PosterManagerTest {
         manager.add(fourth);
 
         WatchMovie[] actual = manager.findLast();
-        WatchMovie[] expected = { fourth, third, second, first };
+        WatchMovie[] expected = {fourth, third, second, first};
 
         Assertions.assertArrayEquals(actual, expected);
     }
 
     @Test
-    public  void findById() {
+    public void findById() {
         PosterManager manager = new PosterManager(repo);
         manager.add(first);
         manager.add(second);
@@ -105,7 +106,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public  void removeByIdTest(){
+    public void removeByIdTest() {
         PosterManager manager = new PosterManager(repo);
         manager.add(first);
         manager.add(second);
@@ -113,16 +114,16 @@ public class PosterManagerTest {
         manager.add(fourth);
         manager.add(fifth);
         manager.add(sixth);
-        manager.removeById (367);
+        manager.removeById(367);
 
         WatchMovie[] actual = manager.findAll();
-        WatchMovie[] expected = { first, second, fourth, fifth, sixth };
+        WatchMovie[] expected = {first, second, fourth, fifth, sixth};
         Assertions.assertArrayEquals(actual, expected);
 
     }
 
     @Test
-    public  void removeAll(){
+    public void removeAll() {
         PosterManager manager = new PosterManager(repo);
         manager.add(first);
         manager.add(second);
